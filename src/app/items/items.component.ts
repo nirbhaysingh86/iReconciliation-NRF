@@ -1,26 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Location } from '../models/location';
+import { Department } from '../models/department';
 import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
 
 @Component({
-  selector: 'app-location',
-  templateUrl: './location.component.html',
-  styleUrls: ['./location.component.scss']
+  selector: 'app-items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.scss']
 })
-export class LocationComponent {
-  locations: any;
+export class ItemsComponent {
+  items: any;
    
   constructor(private reconciliation: HttpClientReconciliationService, private router: Router) {
    
   }
   
   ngOnInit() {
-    this.reconciliation.getLocations().subscribe((data: any) => {
+    this.reconciliation.getItems().subscribe((data: any) => {
       console.log(data);
-      this.locations = data;
-       
+      this.items = data;
     })
   }
-   
 }

@@ -17,6 +17,7 @@ import { HomeNrfComponent } from './home-nrf/home-nrf.component';
 import { ReconciliationInMemDataService, } from './services/reconciliation-in-mem-data.service';
 import { LocationComponent } from './location/location.component';
 import { DepartmentComponent } from './department/department.component';
+import { ItemsComponent } from './items/items.component';
  
 
 @NgModule({
@@ -25,7 +26,8 @@ import { DepartmentComponent } from './department/department.component';
     NavMenuComponent,
     HomeNrfComponent,
     LocationComponent,
-    DepartmentComponent
+    DepartmentComponent,
+    ItemsComponent,
   ],
   imports: [
     BrowserModule,

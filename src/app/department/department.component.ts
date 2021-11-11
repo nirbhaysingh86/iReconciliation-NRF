@@ -9,11 +9,8 @@ import { HttpClientReconciliationService } from '../services/http-client-reconci
   styleUrls: ['./department.component.scss']
 })
 export class DepartmentComponent {
-  airlines: any;
-  allAirlines: any;
-  collectionSize: any;
-  searchProviderCode: any;
-
+  departments: any;
+   
   constructor(private reconciliation: HttpClientReconciliationService, private router: Router) {
    
   }
@@ -21,15 +18,10 @@ export class DepartmentComponent {
   ngOnInit() {
     this.reconciliation.getDepartments().subscribe((data: any) => {
       console.log(data);
-      this.airlines = data;
-      localStorage.setItem("airlineList", JSON.stringify(data));
+      this.departments = data;
+      
     })
   }
 
-  search(value: any): void {
-    this.allAirlines = JSON.parse(localStorage.getItem("airlineList") as any);
-    value = value.target.value;
-    this.airlines = this.allAirlines.filter((val:any) => val.providerCode.toLowerCase().includes(value.toLowerCase()));
-    this.collectionSize = this.airlines.length;
-  }
+   
 }

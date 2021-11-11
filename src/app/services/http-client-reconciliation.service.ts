@@ -6,6 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { ReconciliationService } from './reconciliation.service';
 import { Department } from '../models/department';
 import { Location } from '../models/location';
+import { Items } from '../models/Items';
 const cudOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,11 @@ export class HttpClientReconciliationService extends ReconciliationService {
     );
   }
 
+  getItems(): Observable<Items[]> {
+    return this.http.get<Items[]>(this.itemtUrl).pipe(
+      catchError(this.handleError)
+    );
+  }
   private handleError(error: any) {
     console.error(error);
     return throwError(error);

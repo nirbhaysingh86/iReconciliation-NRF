@@ -1,26 +1,8 @@
-
-<form>
-  <div class="form-group form-inline">
-    Filter by provider code:
-    <input class="form-control ml-2" type="text" name="searchProviderCode" [(ngModel)]="searchProviderCode"
-           (input)="search($event)" />
+<div class="card card-text-align ">
+  <div class="card-header">
+    Departments
   </div>
-</form>
-<div class="table-responsive-md">
-  <table class="table table-bordered text-align">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Provider Code</th>
-        <th scope="col">Provider Name</th>
-        <th scope="col">Provider Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let airline of airlines">
-        <td>{{airline.departmentCode}}</td>
-        <td>{{airline.departmentName}}</td>
-        <td>{{airline.departmentType}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="card-body">
+    <h6 class="card-title" *ngIf="departments">{{departments.length}}</h6>
+  </div>
 </div>
