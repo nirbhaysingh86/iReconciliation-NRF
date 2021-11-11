@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Department } from '../models/department';
-import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
+import { Component, Input } from '@angular/core';
+ 
 
 @Component({
   selector: 'app-items',
@@ -10,15 +8,12 @@ import { HttpClientReconciliationService } from '../services/http-client-reconci
 })
 export class ItemsComponent {
   items: any;
-   
-  constructor(private reconciliation: HttpClientReconciliationService, private router: Router) {
+  @Input() itemdata: any;
+  constructor() {
    
   }
   
   ngOnInit() {
-    this.reconciliation.getItems().subscribe((data: any) => {
-      console.log(data);
-      this.items = data;
-    })
+    this.items = this.itemdata;
   }
 }

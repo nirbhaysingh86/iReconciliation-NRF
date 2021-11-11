@@ -3,13 +3,13 @@
 <div class="row">
 
   <div class="col-sm-2">
-    <app-location></app-location>
+    <app-location [locationdata]="locations" *ngIf="locations"></app-location>
   </div>
   <div class="col-sm-2">
-    <app-department></app-department>
+    <app-department [departmentdata]="departments"  *ngIf="departments"></app-department>
   </div>
   <div class="col-sm-2">
-    <app-items></app-items>
+    <app-items [itemdata]="items"  *ngIf="items"></app-items>
   </div>
 
   <div class="col-sm-6">
@@ -17,15 +17,15 @@
   </div>
 
 </div>
-<div class="row">
+<div class="row row-padding">
   <div class="col-sm-2">
-    <app-doughnut-chart></app-doughnut-chart>
+    <app-doughnut-chart [locationdata]="locations" *ngIf="locations" [header]="'Ratio of affected location'"></app-doughnut-chart>
   </div>
   <div class="col-sm-2">
-    <app-doughnut-chart></app-doughnut-chart>
+    <app-doughnut-chart [header]="'Ratio of affected deps'"></app-doughnut-chart>
   </div>
   <div class="col-sm-2">
-    <app-doughnut-chart></app-doughnut-chart>
+    <app-doughnut-chart [header]="'Estimated Discrepancy Value'"></app-doughnut-chart>
   </div>
 </div>
 

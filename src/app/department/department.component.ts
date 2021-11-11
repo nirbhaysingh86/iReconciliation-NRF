@@ -1,8 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { Department } from '../models/department';
-import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
-
+import { Component, Input } from '@angular/core';
+ 
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
@@ -10,17 +7,13 @@ import { HttpClientReconciliationService } from '../services/http-client-reconci
 })
 export class DepartmentComponent {
   departments: any;
-   
-  constructor(private reconciliation: HttpClientReconciliationService, private router: Router) {
+  @Input() departmentdata: any;
+  constructor() {
    
   }
   
   ngOnInit() {
-    this.reconciliation.getDepartments().subscribe((data: any) => {
-      console.log(data);
-      this.departments = data;
-      
-    })
+    this.departments = this.departmentdata;
   }
 
    
