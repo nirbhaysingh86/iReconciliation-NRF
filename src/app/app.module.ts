@@ -12,16 +12,20 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ReconciliationNrfService } from './services/reconciliation-nrf.service';
+import { ReconciliationService } from './services/reconciliation.service';
 import { HomeNrfComponent } from './home-nrf/home-nrf.component';
-import { ReconciliationNrfInMemDataService } from './services/reconciliation-nrf-in-mem-data.service';
+import { ReconciliationInMemDataService, } from './services/reconciliation-in-mem-data.service';
+import { LocationComponent } from './location/location.component';
+import { DepartmentComponent } from './department/department.component';
  
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeNrfComponent
+    HomeNrfComponent,
+    LocationComponent,
+    DepartmentComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,8 @@ import { ReconciliationNrfInMemDataService } from './services/reconciliation-nrf
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientInMemoryWebApiModule.forRoot(ReconciliationNrfInMemDataService),
+    HttpClientInMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
+    
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       //{ path: 'viewairlines', component: AirlineListComponent },
