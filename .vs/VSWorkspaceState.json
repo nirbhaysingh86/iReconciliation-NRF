@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\department",
+    "\\src\\app\\doughnut-chart",
+    "\\src\\app\\home-nrf",
+    "\\src\\app\\items",
+    "\\src\\app\\location"
+  ],
+  "SelectedNode": "\\src\\app\\home-nrf\\home-nrf.component.html",
+  "PreviewInSolutionExplorer": false
+}

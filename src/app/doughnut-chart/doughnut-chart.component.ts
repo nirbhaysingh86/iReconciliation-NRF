@@ -17,9 +17,9 @@ export class DoughnutChartComponent {
     this.locationdata;
     if (this.header == "Ratio of affected deps") {
       Chart.plugins.register({
-        beforeDraw: function (chart: any) {
+        beforeDraw: function (chart:any) {
           var data = chart.data.datasets[0].data;
-          var sum = data.reduce(function (a: any, b: any) {
+          var sum = data.reduce(function (a:any, b:any) {
             return a + b;
           }, 0);
           var width = chart.chart.width,
