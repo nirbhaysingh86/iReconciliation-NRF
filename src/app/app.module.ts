@@ -12,13 +12,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { ReconciliationService } from './services/reconciliation.service';
 import { HomeNrfComponent } from './home-nrf/home-nrf.component';
 import { ReconciliationInMemDataService, } from './services/reconciliation-in-mem-data.service';
 import { LocationComponent } from './location/location.component';
 import { DepartmentComponent } from './department/department.component';
 import { ItemsComponent } from './items/items.component';
- 
+import { ChartsModule } from 'ng2-charts';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
 
 @NgModule({
   declarations: [
@@ -28,22 +29,20 @@ import { ItemsComponent } from './items/items.component';
     LocationComponent,
     DepartmentComponent,
     ItemsComponent,
+    LineChartComponent,
+    DoughnutChartComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    ChartsModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
-    
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      //{ path: 'viewairlines', component: AirlineListComponent },
-      //{ path: 'createairline', component: CreateAirlineComponent },
-      //{ path: 'updateairline', component: UpdateAirlineComponent },
-      //{ path: 'deleteairline', component: DeleteAirlineComponent },
       { path: 'home', component: HomeNrfComponent },
     ]),
   ],
