@@ -11,7 +11,7 @@ import { Location } from '../models/location';
 export class ReconciliationInMemDataService implements InMemoryDbService {
   createDb() {
     let locations: Location[] = [
-      { locid: 1, locationName: 'Portland', locationCode: 'PL', locationType: 'International', discrepancy: 400 },
+      { locid: 1, locationName: 'Portland', locationCode: 'PL', locationType: 'International', discrepancy: 451 },
       { locid: 2, locationName: 'Denver', locationCode: 'DN', locationType: 'International', discrepancy: 366 },
       { locid: 3, locationName: 'Seattle', locationCode: 'SE', locationType: 'International', discrepancy: 244 },
       { locid: 4, locationName: 'Los Angeles', locationCode: 'LA', locationType: 'International', discrepancy: 379 },
@@ -24,7 +24,7 @@ export class ReconciliationInMemDataService implements InMemoryDbService {
       { locid: 11, locationName: 'New York', locationCode: 'NY', locationType: 'Domestic', discrepancy: 256 },
       { locid: 12, locationName: 'Florida', locationCode: 'FL', locationType: 'International', discrepancy: 230},
       { locid: 13, locationName: 'Chicago', locationCode: 'CO', locationType: 'International', discrepancy: 198},
-      { locid: 14, locationName: 'Minnesota', locationCode: 'MN', locationType: 'International', discrepancy: 199 },
+      { locid: 14, locationName: 'Minnesota', locationCode: 'MN', locationType: 'International', discrepancy: 380 },
     ];
     let departments: Department[] = [
       { dptid: 1, departmentName: 'menswer', departmentCode: 'BL', discrepancy:1599, departmentType: 'International' },

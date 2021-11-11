@@ -30,7 +30,19 @@ export class PieChartComponent implements OnInit {
     responsive: true,
     legend: {
       position: 'left',
+      labels: {
+        filter: (legendItem:any, data:any) => {
+          // First, retrieve the data corresponding to that label
+          const label = legendItem.text
+          const qtd = data.datasets[0].data[legendItem.index]
+          //// Second, mutate the legendItem to include the new text
+          legendItem.text = `${legendItem.text} : ${qtd}`
+          // Third, the filter method expects a bool, so return true to show the modified legendItem in the legend
+          return true
+        }
+      }
     },
+
     tooltips: {
       enabled: true,
        
@@ -39,7 +51,8 @@ export class PieChartComponent implements OnInit {
         //  return data.datasets[0].data[tooltipItems.index] + ' %';
         //}
       }
-    }
+    },
+     
   };
   // Define colors of chart segments
   pieChartColors: Color[] = [
