@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -8,24 +8,28 @@ import { Color, Label } from 'ng2-charts';
   styleUrls: ['./bar-chart.component.scss']
 })
 
-export class BarChartComponent {
+export class BarChartComponent implements OnInit {
+  @Input() locationdata: any;
 
   barChartOptions: ChartOptions = {
     responsive: true,
   };
-  barChartLabels: Label[] = ['Apple', 'Banana', 'Kiwifruit', 'Blueberry', 'Orange', 'Grapes'];
+  barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
-  barChartLegend = true;
+  barChartLegend = false;
   barChartPlugins = [];
+  locationData: any;
+  barChartData: ChartDataSets[] = [{ data: [] }];
 
-  barChartData: ChartDataSets[] = [
-    { data: [45, 37, 60, 70, 46, 33], label: 'Best Fruits' }
-  ];
+  ngOnInit() {
+    this.barChartLabels = this.locationdata.map((loc: { locationName: any; }) => (loc.locationName));
+    this.barChartData = this.locationdata.map((loc: { discrepancy: any; }) => ({ data: loc.discrepancy }));
+  }
   // Define colors of chart segments
   barChartColors: Color[] = [
     {
       backgroundColor: '#466C8F',
-      borderColor: '#E1CCF0',
-    } 
+      
+    }
   ];
 }

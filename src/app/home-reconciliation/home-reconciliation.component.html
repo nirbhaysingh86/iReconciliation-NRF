@@ -1,28 +1,24 @@
 <h1>Inventory discrepancies</h1>
-
 <div class="row">
-
   <div class="col-sm-2">
-    <app-location [locationdata]="locations" *ngIf="locations"></app-location>
+    <app-location [locationdata]="locationdata" *ngIf="locationdata"></app-location>
   </div>
   <div class="col-sm-2">
-    <app-department [departmentdata]="departments" *ngIf="departments"></app-department>
+    <app-department [departmentdata]="departmentdata" *ngIf="departmentdata"></app-department>
   </div>
   <div class="col-sm-2">
-    <app-items [itemdata]="items" *ngIf="items"></app-items>
+    <app-items [itemdata]="itemdata" *ngIf="itemdata"></app-items>
   </div>
-
   <div class="col-sm-6">
-    <app-pie-chart [departmentsdata]="departments" *ngIf="departments"></app-pie-chart>
+    <app-pie-chart [departmentdata]="departmentdata" *ngIf="departmentdata"></app-pie-chart>
   </div>
-
 </div>
 <div class="row row-padding">
   <div class="col-sm-2">
-    <app-doughnut-chart [locationdata]="locations" *ngIf="locations" [header]="'Ratio of affected location'"></app-doughnut-chart>
+    <app-doughnut-chart [locationlabels]="locationlabels" [locdiscrepancy]="locdiscrepancy" [loccolors]="loccolors" *ngIf="locationlabels && locdiscrepancy" [header]="'Ratio of affected location'"></app-doughnut-chart>
   </div>
   <div class="col-sm-2">
-    <app-doughnut-chart [header]="'Ratio of affected deps'"></app-doughnut-chart>
+    <app-doughnut-chart [departmentlabels]="departmentlabels" [depdiscrepancy]="depdiscrepancy" [depcolors]="depcolors" *ngIf="departmentlabels && depdiscrepancy" [header]="'Ratio of affected deps'"></app-doughnut-chart>
   </div>
   <div class="col-sm-2">
     <div class="card card-text-size">
@@ -33,13 +29,11 @@
             Estimated Discrepancy Value
           </span>
           <div>
-
+            $213,885
           </div>
         </div>
       </div>
     </div>
-
-
   </div>
 </div>
 
@@ -48,6 +42,6 @@
     <app-line-chart></app-line-chart>
   </div>
   <div class="col-sm-6">
-    <app-bar-chart></app-bar-chart>
+    <app-bar-chart [locationdata]="locationdata" *ngIf="locationdata"></app-bar-chart>
   </div>
 </div>

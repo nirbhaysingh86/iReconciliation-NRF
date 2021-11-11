@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip } from 'ng2-charts';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
 
 @Component({
   selector: 'app-pie-chart',
@@ -9,19 +9,21 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
 })
 
 export class PieChartComponent implements OnInit {
-  @Input() departmentsdata: any;
+  @Input() departmentdata: any;
   public pieChartLabels: Label[] = [];
   public pieChartData: SingleDataSet = [];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
+
   constructor() {
      
   }
+
   ngOnInit() {
 
-    this.pieChartLabels = this.departmentsdata.map((dep: { departmentName: any; }) => (dep.departmentName));
-    this.pieChartData = this.departmentsdata.map((dep: { discrepancy: any; }) => (dep.discrepancy));
+    this.pieChartLabels = this.departmentdata.map((dep: { departmentName: any; }) => (dep.departmentName));
+    this.pieChartData = this.departmentdata.map((dep: { discrepancy: any; }) => (dep.discrepancy));
   }
 
   public pieChartOptions: ChartOptions = {
@@ -31,7 +33,7 @@ export class PieChartComponent implements OnInit {
     },
     tooltips: {
       enabled: true,
-      mode: 'single',
+       
       callbacks: {
         //label: function (tooltipItems, data) {
         //  return data.datasets[0].data[tooltipItems.index] + ' %';
@@ -39,8 +41,10 @@ export class PieChartComponent implements OnInit {
       }
     }
   };
-  
-
-  
-
+  // Define colors of chart segments
+  pieChartColors: Color[] = [
+    {
+      backgroundColor: ['#5B9BD5', '#ED7D31', '#A5A5A5', '#FFC000','#4472C4'],
+    }
+  ];
 }

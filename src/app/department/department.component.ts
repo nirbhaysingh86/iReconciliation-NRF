@@ -16,5 +16,4 @@ export class DepartmentComponent {
     this.departments = this.departmentdata;
   }
 
-   
 }

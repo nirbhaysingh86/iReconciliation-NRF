@@ -11,17 +11,25 @@ import { Location } from '../models/location';
 export class ReconciliationInMemDataService implements InMemoryDbService {
   createDb() {
     let locations: Location[] = [
-      { locid: 1, locationName: 'Bloomington', locationCode: 'BL', locationType: 'International' },
-      { locid: 2, locationName: 'Burnsville', locationCode: 'BU', locationType: 'International' },
-      { locid: 3, locationName: 'Eden Prairie', locationCode: 'EP', locationType: 'International' },
-      { locid: 4, locationName: 'Eagan', locationCode: 'EA', locationType: 'International' },
-      { locid: 5, locationName: 'Roseville', locationCode: 'RO', locationType: 'International' },
-      { locid: 6, locationName: 'Shakopee', locationCode: 'SH', locationType: 'International' },
+      { locid: 1, locationName: 'Portland', locationCode: 'PL', locationType: 'International', discrepancy: 400 },
+      { locid: 2, locationName: 'Denver', locationCode: 'DN', locationType: 'International', discrepancy: 366 },
+      { locid: 3, locationName: 'Seattle', locationCode: 'SE', locationType: 'International', discrepancy: 244 },
+      { locid: 4, locationName: 'Los Angeles', locationCode: 'LA', locationType: 'International', discrepancy: 379 },
+      { locid: 5, locationName: 'San Francisco', locationCode: 'SF', locationType: 'International', discrepancy: 356 },
+      { locid: 6, locationName: 'San Diego', locationCode: 'SD', locationType: 'Domestic', discrepancy: 345 },
+      { locid: 7, locationName: 'Austin', locationCode: 'AS', locationType: 'Domestic', discrepancy: 378 },
+      { locid: 8, locationName: 'Phoenix', locationCode: 'PX', locationType: 'International', discrepancy: 321},
+      { locid: 9, locationName: 'Tucson', locationCode: 'TX', locationType: 'Domestic', discrepancy: 222 },
+      { locid: 10, locationName: 'Boston', locationCode: 'BN', locationType: 'Domestic', discrepancy: 231},
+      { locid: 11, locationName: 'New York', locationCode: 'NY', locationType: 'Domestic', discrepancy: 256 },
+      { locid: 12, locationName: 'Florida', locationCode: 'FL', locationType: 'International', discrepancy: 230},
+      { locid: 13, locationName: 'Chicago', locationCode: 'CO', locationType: 'International', discrepancy: 198},
+      { locid: 14, locationName: 'Minnesota', locationCode: 'MN', locationType: 'International', discrepancy: 199 },
     ];
     let departments: Department[] = [
       { dptid: 1, departmentName: 'menswer', departmentCode: 'BL', discrepancy:1599, departmentType: 'International' },
       { dptid: 2, departmentName: 'shoes', departmentCode: 'BU', discrepancy: 136,departmentType: 'International' },
-      { dptid: 3, departmentName: 'handbags', departmentCode: 'EP', discrepancy: 777,departmentType: 'International' },
+      { dptid: 3, departmentName: 'handbags', departmentCode: 'EP', discrepancy: 777, departmentType: 'Domestic' },
       { dptid: 4, departmentName: 'beauty', departmentCode: 'EA', discrepancy: 1448,departmentType: 'International' },
       { dptid: 5, departmentName: 'accessories', departmentCode: 'RO', discrepancy: 405, departmentType: 'International' },
        

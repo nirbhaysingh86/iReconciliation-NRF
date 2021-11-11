@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
 import { ChartType } from 'chart.js';
-import { MultiDataSet, Label, PluginServiceGlobalRegistrationAndOptions } from 'ng2-charts';
+import { MultiDataSet, Label, PluginServiceGlobalRegistrationAndOptions, Color } from 'ng2-charts';
 
 @Component({
   selector: 'app-doughnut-chart',
@@ -9,12 +9,30 @@ import { MultiDataSet, Label, PluginServiceGlobalRegistrationAndOptions } from '
   styleUrls: ['./doughnut-chart.component.scss']
 })
 
-export class DoughnutChartComponent {
-  @Input() locationdata: any;
+export class DoughnutChartComponent implements OnInit {
+  @Input() locationlabels: any;
+  @Input() locdiscrepancy: any;
+  @Input() departmentlabels: any;
+  @Input() depdiscrepancy: any;
   @Input() header: any;
+  @Input() depcolors: any;
+  @Input() loccolors: any;
+
+  doughnutChartLabels: Label[] = [];
+  doughnutChartData: MultiDataSet = [[]];
+  doughnutChartType: ChartType = 'doughnut';
+  public doughnutChartOptions: any = {
+    //borderWidth: 2,
+    //maintainAspectRatio: true,
+    //cutoutPercentage: 100,
+    centerText: true
+  }
 
   ngOnInit() {
-    this.locationdata;
+     
+    this.doughnutChartLabels = this.locationlabels || this.departmentlabels;
+    this.doughnutChartData = this.locdiscrepancy || this.depdiscrepancy;
+    this.doughnutChartColors = this.loccolors || this.depcolors;
     //if (this.header == "Ratio of affected deps") {
     //  Chart.plugins.register({
     //    beforeDraw: function (chart:any) {
@@ -38,19 +56,11 @@ export class DoughnutChartComponent {
     //  });
     //}
   }
-  doughnutChartLabels: Label[] = ["International","Domestic"];
-  doughnutChartData: MultiDataSet = [
-    [55, 25]
-  ];
-  doughnutChartType: ChartType = 'doughnut';
-  public doughnutChartOptions: any = {
-    borderWidth: 2,
-    maintainAspectRatio: true,
-    cutoutPercentage: 55,
-    centerText:true
-     
-  }
   
+  // Define colors of chart segments
+  doughnutChartColors: Color[] = [
+     
+  ];
   public doughnutChartLegend: boolean = false;
-   
+
 }
