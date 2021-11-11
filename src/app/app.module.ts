@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeNrfComponent } from './home-nrf/home-nrf.component';
+import { HomeReconciliationfComponent } from './home-reconciliation/home-reconciliation.component';
 import { ReconciliationInMemDataService, } from './services/reconciliation-in-mem-data.service';
 import { LocationComponent } from './location/location.component';
 import { DepartmentComponent } from './department/department.component';
@@ -27,7 +27,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeNrfComponent,
+    HomeReconciliationfComponent,
     LocationComponent,
     DepartmentComponent,
     ItemsComponent,
@@ -47,7 +47,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     HttpClientInMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: 'home', component: HomeNrfComponent },
+      { path: 'home', component: HomeReconciliationfComponent },
     ]),
   ],
   providers: [],

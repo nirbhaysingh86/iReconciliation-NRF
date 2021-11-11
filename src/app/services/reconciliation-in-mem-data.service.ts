@@ -19,11 +19,11 @@ export class ReconciliationInMemDataService implements InMemoryDbService {
       { locid: 6, locationName: 'Shakopee', locationCode: 'SH', locationType: 'International' },
     ];
     let departments: Department[] = [
-      { dptid: 1, departmentName: 'menswer', departmentCode: 'BL', departmentType: 'International' },
-      { dptid: 2, departmentName: 'shoes', departmentCode: 'BU', departmentType: 'International' },
-      { dptid: 3, departmentName: 'handbags', departmentCode: 'EP', departmentType: 'International' },
-      { dptid: 4, departmentName: 'beauty', departmentCode: 'EA', departmentType: 'International' },
-      { dptid: 5, departmentName: 'accessories', departmentCode: 'RO', departmentType: 'International' },
+      { dptid: 1, departmentName: 'menswer', departmentCode: 'BL', discrepancy:1599, departmentType: 'International' },
+      { dptid: 2, departmentName: 'shoes', departmentCode: 'BU', discrepancy: 136,departmentType: 'International' },
+      { dptid: 3, departmentName: 'handbags', departmentCode: 'EP', discrepancy: 777,departmentType: 'International' },
+      { dptid: 4, departmentName: 'beauty', departmentCode: 'EA', discrepancy: 1448,departmentType: 'International' },
+      { dptid: 5, departmentName: 'accessories', departmentCode: 'RO', discrepancy: 405, departmentType: 'International' },
        
     ];
     let items: Items[] = [

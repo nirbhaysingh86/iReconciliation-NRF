@@ -6,7 +6,7 @@
       <span>
         Discrepancy by Department
       </span>
-      <div class="chart-wrapper">
+      <div class="chart-wrapper" *ngIf="pieChartLabels">
         <canvas baseChart
                 [data]="pieChartData"
                 [labels]="pieChartLabels"

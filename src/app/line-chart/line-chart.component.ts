@@ -35,7 +35,11 @@ export class LineChartComponent {
           position: 'right',
           ticks: { min: 0, max: 10000 }
       }]
-    }
+    },
+    legend: {
+      position: 'top',
+      align:'end'
+    },
   };
 
   // Define colors of chart segments

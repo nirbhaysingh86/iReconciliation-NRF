@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
 @Component({
-  selector: 'app-home-nrf',
-  templateUrl: './home-nrf.component.html',
-  styleUrls: ['./home-nrf.component.scss']
+  selector: 'app-home-reconciliation',
+  templateUrl: './home-reconciliation.component.html',
+  styleUrls: ['./home-reconciliation.component.scss']
 })
-export class HomeNrfComponent {
+export class HomeReconciliationfComponent {
   locations: any;
   departments: any;
   items: any;
