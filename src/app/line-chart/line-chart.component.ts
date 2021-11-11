@@ -12,9 +12,9 @@ export class LineChartComponent {
 
   // Array of different segments in chart
   lineChartData: ChartDataSets[] = [
-    { data: [600000, 499000, 398000, 597000, 196000, 495000, 94000, 43000, 92000, 91000, 90000, 89000, 85000, 87000, 482000, 379000], label: 'Discrepancy' },
-    { data: [1000, 554565, 456, 3567, 9566, 789, 678, 890, 242, 280, 281, 356, 454355, 640, 678, 879], label: 'Value' },
-    { data: [56638, 455448, 171440, 344479, 343486, 445447, 90, 65, 59, 80, 81, 454356, 55, 40, 89, 67], label: 'Poly.(Value)', borderDash: [10, 5] }
+    { data: [600000, 559000, 548000, 537000, 496000, 495000, 494000, 543000, 492000, 491000, 490000, 489000, 485000, 487000, 482000, 379000], label: 'Discrepancy' },
+    { data: [441000, 554565, 456, 3567, 9566, 433789, 454678, 455890, 45242, 455280, 455281, 345456, 454355, 640, 678, 879], label: 'Value' },
+    { data: [556638, 455448, 171440, 344479, 343486, 445447, 45590, 56665, 66659, 6680, 81, 454356, 55, 40, 89, 67], label: 'Poly.(Value)'}
   ];
 
   //Labels shown on the x-axis
@@ -41,13 +41,16 @@ export class LineChartComponent {
   // Define colors of chart segments
   lineChartColors: Color[] = [
 
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
+    {  
+      backgroundColor: '#E1CCF0',
+      borderColor: '#E1CCF0',
     },
-    { // red
-      backgroundColor: 'rgba(255,0,0,0.3)',
-      borderColor: 'red',
+    {  
+      backgroundColor: '#FFFFFF',
+      borderColor: '#ED7D31',
+    },
+    {
+      borderDash: [10, 5], borderColor: '#4472C4', backgroundColor: '#FFFFFF'
     }
   ];
 
