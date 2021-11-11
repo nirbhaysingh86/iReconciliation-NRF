@@ -1,0 +1,22 @@
+
+<div class="card card-text-size">
+  
+  <div class="card-body">
+    <div class="chartjs-container">
+      <span>
+        Discrepancy by location
+      </span>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [colors]="barChartColors"
+                [plugins]="barChartPlugins"
+                [legend]="barChartLegend"
+                [chartType]="barChartType">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+
+<div class="card card-text-size">
+  
+  <div class="card-body">
+    <div class="chartjs-container">
+      <span>
+        Discrepancy by Department
+      </span>
+      <div class="chart-wrapper">
+        <canvas baseChart
+                [data]="pieChartData"
+                [labels]="pieChartLabels"
+                [chartType]="pieChartType"
+                [options]="pieChartOptions"
+                [plugins]="pieChartPlugins"
+                [legend]="pieChartLegend">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>
