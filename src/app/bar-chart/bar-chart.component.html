@@ -7,7 +7,7 @@
         Discrepancy by location
       </span>
       <div class="chart-wrapper bar-padding" *ngIf="barChartLabels">
-        <canvas baseChart
+        <canvas baseChart id="bar-chart"
                 [datasets]="barChartData"
                 [labels]="barChartLabels"
                 [options]="barChartOptions"

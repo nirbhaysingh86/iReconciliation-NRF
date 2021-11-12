@@ -23,12 +23,19 @@ export class LineChartComponent {
   // Define chart options
   lineChartOptions: ChartOptions = {
     responsive: true,
-    scales: { //you're missing this
+    scales: {
+      
       yAxes: [{
         id: "y-axis-1",
         position: 'left',
         type: 'linear',
-        ticks: { min: 0 }
+        
+        ticks: { min: 0 },
+        scaleLabel: {
+          display: true,
+          labelString: "$",
+          fontStyle:'bold'
+        }
       },
         {
           id: "y-axis-2",

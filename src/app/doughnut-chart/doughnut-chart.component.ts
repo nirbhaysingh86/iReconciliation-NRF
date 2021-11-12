@@ -33,28 +33,30 @@ export class DoughnutChartComponent implements OnInit {
     this.doughnutChartLabels = this.locationlabels || this.departmentlabels;
     this.doughnutChartData = this.locdiscrepancy || this.depdiscrepancy;
     this.doughnutChartColors = this.loccolors || this.depcolors;
-    //if (this.header == "Ratio of affected deps") {
-    //  Chart.plugins.register({
-    //    beforeDraw: function (chart:any) {
-    //      var data = chart.data.datasets[0].data;
-    //      var sum = data.reduce(function (a:any, b:any) {
-    //        return a + b;
-    //      }, 0);
-    //      var width = chart.chart.width,
-    //        height = chart.chart.height,
-    //        ctx = chart.chart.ctx;
-    //      ctx.restore();
-    //      var fontSize = (height / 10).toFixed(2);
-    //      ctx.font = fontSize + "px Arial";
-    //      ctx.textBaseline = "middle";
-    //      var text = sum,
-    //        textX = Math.round((width - ctx.measureText(text).width) / 2),
-    //        textY = height / 2;
-    //      ctx.fillText(text, textX, textY);
-    //      ctx.save();
-    //    }
-    //  });
-    //}
+    if (this.header == "Ratio of affected deps") {
+      Chart.plugins.register({
+        beforeDraw: function (chart: any) {
+          if (chart.canvas.id == "Ratio of affected deps") {
+            var data = chart.data.datasets[0].data;
+            var sum = data.reduce(function (a: any, b: any) {
+              return a + b;
+            }, 0);
+            var width = chart.chart.width,
+              height = chart.chart.height,
+              ctx = chart.chart.ctx;
+            ctx.restore();
+            var fontSize = (height / 10).toFixed(2);
+            ctx.font = fontSize + "px Arial";
+            ctx.textBaseline = "middle";
+            var text = sum,
+              textX = Math.round((width - ctx.measureText(text).width) / 2),
+              textY = height / 2;
+            ctx.fillText("20%", textX, textY);
+            ctx.save();
+          }
+        }
+      });
+    }
   }
   
   // Define colors of chart segments
