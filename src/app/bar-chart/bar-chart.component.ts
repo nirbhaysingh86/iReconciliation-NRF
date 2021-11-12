@@ -14,7 +14,7 @@ export class BarChartComponent implements OnInit {
    // Define chart options
   barChartOptions: ChartOptions = {
     responsive: true,
-    scales: { //you're missing this
+    scales: {  
       yAxes: [{
         id: "y-axis-1",
         position: 'left',
