@@ -14,7 +14,7 @@
               [legend]="lineChartLegend"
               [chartType]="lineChartType"
               #linechart
-
+              (chartClick)="chartClicked($event)"
               [plugins]="lineChartPlugins">
       </canvas>
        

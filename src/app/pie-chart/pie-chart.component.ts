@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, SimpleChanges } from '@angular/core';
 import { ChartType, ChartOptions } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color } from 'ng2-charts';
+import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, Color, BaseChartDirective } from 'ng2-charts';
 
 @Component({
   selector: 'app-pie-chart',
@@ -10,11 +10,15 @@ import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsToolt
 
 export class PieChartComponent implements OnInit {
   @Input() departmentdata: any;
+  @Input() selectedWeek: any;
+  @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+
   public pieChartLabels: Label[] = [];
-  public pieChartData: SingleDataSet = [];
+  public pieChartData: any = [];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = true;
   public pieChartPlugins = [];
+ 
 
   constructor() {
      
@@ -24,6 +28,16 @@ export class PieChartComponent implements OnInit {
 
     this.pieChartLabels = this.departmentdata.map((dep: { departmentName: any; }) => (dep.departmentName));
     this.pieChartData = this.departmentdata.map((dep: { discrepancy: any; }) => (dep.discrepancy));
+  }
+
+  ngOnChanges(changes: any) {
+    console.log(changes);
+    if (changes && changes.selectedWeek) {
+      this.pieChartData[2] = 121;
+      this.pieChartData[3] = 221;
+      this.pieChartData[4] = 21;
+      this.chart?.update();
+    }
   }
 
   public pieChartOptions: ChartOptions = {

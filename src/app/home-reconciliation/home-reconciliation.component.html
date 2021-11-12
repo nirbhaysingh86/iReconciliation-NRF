@@ -10,7 +10,7 @@
     <app-items [itemdata]="itemdata" *ngIf="itemdata"></app-items>
   </div>
   <div class="col-sm-6">
-    <app-pie-chart [departmentdata]="departmentdata" *ngIf="departmentdata"></app-pie-chart>
+    <app-pie-chart [departmentdata]="departmentdata" *ngIf="departmentdata" [selectedWeek]="selectedWeek"></app-pie-chart>
   </div>
 </div>
 <div class="row row-padding">
@@ -43,9 +43,9 @@
 
 <div class="row bar-line-padding">
   <div class="col-sm-6">
-    <app-line-chart></app-line-chart>
+    <app-line-chart (getWeekData)="getWeekData($event)"></app-line-chart>
   </div>
   <div class="col-sm-6">
-    <app-bar-chart [locationdata]="locationdata" *ngIf="locationdata"></app-bar-chart>
+    <app-bar-chart [locationdata]="locationdata" [selectedWeek]="selectedWeek" *ngIf="locationdata"></app-bar-chart>
   </div>
 </div>

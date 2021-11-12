@@ -15,6 +15,7 @@ export class HomeReconciliationfComponent {
   locdiscrepancy: any;
   depdiscrepancy: any;
   depcolors: any;
+  selectedWeek: any;
 
   constructor(private reconciliation: HttpClientReconciliationService) {
 
@@ -73,6 +74,10 @@ export class HomeReconciliationfComponent {
       console.log(data);
       this.itemdata = data;
     })
+  }
+
+  getWeekData(week: any) {
+    this.selectedWeek = week;
   }
 
 }
