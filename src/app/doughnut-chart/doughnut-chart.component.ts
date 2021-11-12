@@ -18,6 +18,11 @@ export class DoughnutChartComponent implements OnInit {
   @Input() depcolors: any;
   @Input() loccolors: any;
 
+  // Define colors of chart segments
+  doughnutChartColors: Color[] = [
+
+  ];
+  public doughnutChartLegend: boolean = false;
   doughnutChartLabels: Label[] = [];
   doughnutChartData: MultiDataSet = [[]];
   doughnutChartType: ChartType = 'doughnut';
@@ -59,10 +64,5 @@ export class DoughnutChartComponent implements OnInit {
     }
   }
   
-  // Define colors of chart segments
-  doughnutChartColors: Color[] = [
-     
-  ];
-  public doughnutChartLegend: boolean = false;
-
+ 
 }

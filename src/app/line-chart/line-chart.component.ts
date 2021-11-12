@@ -18,7 +18,7 @@ export class LineChartComponent {
   ];
 
   //Labels shown on the x-axis
-  lineChartLabels: Label[] = ['W01', 'W02', 'W03', 'W04', 'W05', 'W06', 'W07', 'W08', 'W00', 'W10', 'W11', 'W12', 'W13', 'W14', 'W15', 'W16'];
+  lineChartLabels: Label[] = ['W01', 'W02', 'W03', 'W04', 'W05', 'W06', 'W07', 'W08', 'W09', 'W10', 'W11', 'W12', 'W13', 'W14', 'W15', 'W16'];
 
   // Define chart options
   lineChartOptions: ChartOptions = {
@@ -42,6 +42,9 @@ export class LineChartComponent {
           position: 'right',
           ticks: { min: 0, max: 10000 }
       }]
+    },
+     onClick: (evt, item) => {
+      console.log('Clicked!')
     },
     legend: {
       position: 'top',
