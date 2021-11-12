@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
- 
+
 
 @Component({
   selector: 'app-items',
@@ -10,10 +10,15 @@ export class ItemsComponent {
   items: any;
   @Input() itemdata: any;
   constructor() {
-   
+
   }
-  
+
   ngOnInit() {
-    this.items = this.itemdata;
+
+    this.items = 0;
+     this.itemdata.map( (val: any, index: any) => {
+       this.items += val.discrepancy;
+    })
+     
   }
 }
