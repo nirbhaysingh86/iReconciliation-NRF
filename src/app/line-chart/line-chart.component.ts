@@ -46,8 +46,15 @@ export class LineChartComponent {
       {
         id: "y-axis-2",
         position: 'right',
-        ticks: { min: 0, max: 90000, fontStyle: "bold",  }, gridLines: {
-          display: true,
+        ticks: { min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
+          display: false,
+          zeroLineColor: 'white',
+          color: 'transparent'
+        }
+        }],
+      xAxes: [{
+          gridLines: {
+          display: false,
           zeroLineColor: 'white',
           color: 'transparent'
         }

@@ -20,7 +20,15 @@ export class BarChartComponent implements OnInit {
         id: "y-axis-1",
         position: 'left',
         type: 'linear',
-        ticks: { min: 0, max: 500 }
+        ticks: { stepSize: 100,  max: 500,beginAtZero:true },gridLines: {
+          
+        }
+      }], xAxes: [{
+        gridLines: {
+          display: false,
+          zeroLineColor: 'white',
+          color: 'transparent'
+        }
       }]
     },
   };
