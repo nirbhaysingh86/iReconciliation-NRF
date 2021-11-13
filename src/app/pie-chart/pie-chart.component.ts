@@ -29,14 +29,18 @@ export class PieChartComponent implements OnInit {
     this.pieChartLabels = this.departmentdata.map((dep: { departmentName: any; }) => (dep.departmentName));
     this.pieChartData = this.departmentdata.map((dep: { discrepancy: any; }) => (dep.discrepancy));
   }
-
+   //pie chart will display based on week selection
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.selectedWeek) {
-      this.pieChartData[2] = 121;
-      this.pieChartData[3] = 221;
-      this.pieChartData[4] = 21;
-      this.chart?.update();
+
+      if (this.pieChartData.length > 0) {
+        for (let i = 0; i < this.pieChartData.length; i++) {
+          this.pieChartData[i] = this.departmentdata[i][this.selectedWeek];
+        }
+        this.chart?.update();
+      }
+       
     }
   }
 

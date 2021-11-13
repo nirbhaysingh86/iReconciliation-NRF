@@ -30,7 +30,6 @@ export class BarChartComponent implements OnInit {
   barChartPlugins = [];
   locationData: any;
   barChartData: any[] = [{ data: [] }];
-  
 
   ngOnInit() {
     this.setChartData();
@@ -38,16 +37,19 @@ export class BarChartComponent implements OnInit {
 
   setChartData() {
     this.barChartLabels = this.locationdata.map((loc: { locationName: any; }) => (loc.locationName));
-    this.barChartData = this.locationdata.map((loc: { discrepancy: any; }) => ({ data: loc.discrepancy }));
+    this.barChartData = this.locationdata.map((loc: any) => ({ data: !this.selectedWeek ? loc.W01 : loc[this.selectedWeek] }));
   }
-
+  //bar chart will display based on week selection
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.selectedWeek) {
-      this.barChartData[0].data[2] = 121;
-      this.barChartData[0].data[3] = 221;
-      this.barChartData[0].data[4] = 21;
-      this.chart?.update();
+       
+      if (this.barChartData.length > 0) {
+        for (let i = 0; i < this.barChartData[0].data.length; i++) {
+          this.barChartData[0].data[i] = this.locationdata[i][this.selectedWeek];
+        }
+        this.chart?.update();
+      }
     }
   }
 
