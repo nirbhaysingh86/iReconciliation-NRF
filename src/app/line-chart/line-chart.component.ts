@@ -24,7 +24,7 @@ export class LineChartComponent {
   // Define chart options
   lineChartOptions: ChartOptions = {
     responsive: true,
-    
+
     scales: {
 
       yAxes: [{
@@ -34,7 +34,7 @@ export class LineChartComponent {
 
         ticks: {
           min: 0, max: 600000,
-           
+
           callback: function (label: any) {
             return '$' + label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           }
@@ -45,8 +45,8 @@ export class LineChartComponent {
           fontStyle: 'bold',
 
         }, gridLines: {
-
-          //color: 'green' // grid line color (can be removed or changed)
+          display: false,
+          color: "#FFFFFF"
         }
       },
       {
