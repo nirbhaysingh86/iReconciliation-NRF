@@ -21,13 +21,16 @@ export class BarChartComponent implements OnInit {
         position: 'left',
         type: 'linear',
         ticks: { stepSize: 100,  max: 500,beginAtZero:true },gridLines: {
+          zeroLineColor: 'white',
+          drawBorder: false,
           
         }
       }], xAxes: [{
         gridLines: {
           display: false,
           zeroLineColor: 'white',
-          color: 'transparent'
+          color: 'transparent',
+            
         }
       }]
     },

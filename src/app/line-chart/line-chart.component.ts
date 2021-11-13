@@ -48,6 +48,7 @@ export class LineChartComponent {
         position: 'right',
         ticks: { min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
           display: false,
+          drawBorder: false,
           zeroLineColor: 'white',
           color: 'transparent'
         }
@@ -57,6 +58,7 @@ export class LineChartComponent {
           display: false,
           zeroLineColor: 'white',
           color: 'transparent'
+
         }
       }]
     },
