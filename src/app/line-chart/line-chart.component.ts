@@ -40,29 +40,30 @@ export class LineChartComponent {
           display: true,
           fontStyle: 'bold',
         }, gridLines: {
-           display:true
+          display: true
         }
       },
       {
         id: "y-axis-2",
         position: 'right',
-        ticks: {   min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
+        ticks: { min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
           display: false,
           drawBorder: false,
           zeroLineColor: 'white',
           color: 'transparent'
         }
-        }],
+      }],
       xAxes: [{
-          gridLines: {
+        gridLines: {
           display: false,
           zeroLineColor: 'white',
           color: 'transparent'
 
         }, ticks: {
-          fontStyle:'bold',
+          fontStyle: 'bold',
+
         }
-      }]
+      },]
     },
 
     legend: {
@@ -70,28 +71,36 @@ export class LineChartComponent {
       align: 'end',
       labels: {
         fontColor: 'black', // legend color (can be hexadecimal too)
-        fontStyle:'bold'
+        fontStyle: 'bold'
+      }
+    }, elements: {
+      point: {
+        radius: this.customRadius,
       }
     },
     plugins: {
       datalabels: {
         formatter: (value: any, ctx: any) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
-          
+
           return label;
         },
 
       },
     },
   };
-
+  customRadius(context: any) {
+    let index = context.dataIndex;
+    let value = context.dataset.data[index];
+    return 5
+  }
   // Define colors of chart segments
   lineChartColors: Color[] = [
 
     {
       backgroundColor: '#E1CCF0',
       borderColor: '#E1CCF0',
-      
+
     },
     {
       backgroundColor: '#FFFFFF',
