@@ -46,7 +46,7 @@ export class LineChartComponent {
       {
         id: "y-axis-2",
         position: 'right',
-        ticks: { min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
+        ticks: {   min: 0, max: 90000, fontStyle: "bold", }, gridLines: {
           display: false,
           drawBorder: false,
           zeroLineColor: 'white',
@@ -59,6 +59,8 @@ export class LineChartComponent {
           zeroLineColor: 'white',
           color: 'transparent'
 
+        }, ticks: {
+          fontStyle:'bold',
         }
       }]
     },
@@ -68,6 +70,7 @@ export class LineChartComponent {
       align: 'end',
       labels: {
         fontColor: 'black', // legend color (can be hexadecimal too)
+        fontStyle:'bold'
       }
     },
     plugins: {
@@ -88,7 +91,7 @@ export class LineChartComponent {
     {
       backgroundColor: '#E1CCF0',
       borderColor: '#E1CCF0',
-
+      
     },
     {
       backgroundColor: '#FFFFFF',
