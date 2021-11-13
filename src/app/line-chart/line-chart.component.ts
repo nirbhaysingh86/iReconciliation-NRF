@@ -1,5 +1,5 @@
 // line-chart.component.ts
-import { Component ,Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
 
@@ -24,22 +24,28 @@ export class LineChartComponent {
   // Define chart options
   lineChartOptions: ChartOptions = {
     responsive: true,
-
+    
     scales: {
 
       yAxes: [{
         id: "y-axis-1",
         position: 'left',
         type: 'linear',
-        
-        labels: ['44'],
-        ticks: { min: 0, max: 600000 },
+
+        ticks: {
+          min: 0, max: 600000,
+           
+          callback: function (label: any) {
+            return '$' + label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+          }
+        },
         scaleLabel: {
           display: true,
-          labelString: "$",
+
           fontStyle: 'bold',
 
-        },gridLines: {
+        }, gridLines: {
+
           //color: 'green' // grid line color (can be removed or changed)
         }
       },
@@ -47,7 +53,7 @@ export class LineChartComponent {
         id: "y-axis-2",
         position: 'right',
         ticks: { min: 0, max: 90000 }, gridLines: {
-          
+
         }
       }]
     },
@@ -61,11 +67,11 @@ export class LineChartComponent {
     },
     plugins: {
       datalabels: {
-        formatter: (value:any, ctx:any) => {
+        formatter: (value: any, ctx: any) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
         },
-   
+
       },
     },
   };
@@ -76,12 +82,12 @@ export class LineChartComponent {
     {
       backgroundColor: '#E1CCF0',
       borderColor: '#E1CCF0',
-      
+
     },
     {
       backgroundColor: '#FFFFFF',
       borderColor: '#ED7D31',
-     
+
     },
     {
       borderDash: [10, 5], borderColor: '#4472C4', backgroundColor: '#FFFFFF'
