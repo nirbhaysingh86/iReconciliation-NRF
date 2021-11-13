@@ -24,36 +24,32 @@ export class LineChartComponent {
   // Define chart options
   lineChartOptions: ChartOptions = {
     responsive: true,
-
     scales: {
-
       yAxes: [{
         id: "y-axis-1",
         position: 'left',
         type: 'linear',
-
         ticks: {
           min: 0, max: 600000,
-
+          fontStyle: "bold",
           callback: function (label: any) {
             return '$' + label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
           }
         },
         scaleLabel: {
           display: true,
-
           fontStyle: 'bold',
-
         }, gridLines: {
-          display: false,
-          color: "#FFFFFF"
+           display:true
         }
       },
       {
         id: "y-axis-2",
         position: 'right',
-        ticks: { min: 0, max: 90000 }, gridLines: {
-
+        ticks: { min: 0, max: 90000, fontStyle: "bold",  }, gridLines: {
+          display: true,
+          zeroLineColor: 'white',
+          color: 'transparent'
         }
       }]
     },
@@ -69,6 +65,7 @@ export class LineChartComponent {
       datalabels: {
         formatter: (value: any, ctx: any) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
+          
           return label;
         },
 
