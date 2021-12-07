@@ -4,6 +4,9 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { DiscrepancyLocationDetails } from '../models/discrepancylocationdetails';
 import { HttpClientReconciliationService } from '../services/http-client-reconciliation.service';
+import { MatDialog } from '@angular/material/dialog';
+import { RecommendedActionsDialog } from '../recommended-actions-dialog/recommended-actions-dialog.component';
+
 @Component({
   selector: 'app-discrepancy-location-detail',
   templateUrl: './discrepancy-location-detail.component.html',
@@ -23,7 +26,7 @@ export class DiscrepancyLocationDetail {
   dataSource: MatTableDataSource<DiscrepancyLocationDetails> = new MatTableDataSource();
   @ViewChild(MatSort, { static: false }) sort: any;
 
-  constructor(private reconciliation: HttpClientReconciliationService) {
+  constructor(private reconciliation: HttpClientReconciliationService, public dialog: MatDialog) {
 
   }
 
@@ -47,15 +50,14 @@ export class DiscrepancyLocationDetail {
   }
 
   showPopUp(row: any) {
-    row;
+    //row;
+    this.dialog.open(RecommendedActionsDialog);
   }
   ngAfterViewInit() {
 
     this.dataSource.sort = this.sort;
   }
-
    
-
   onMatSortChange() {
     this.dataSource.sort = this.sort;
   }

@@ -16,6 +16,7 @@ import { HomeReconciliationfComponent } from './home-reconciliation/home-reconci
 import { ReconciliationInMemDataService, } from './services/reconciliation-in-mem-data.service';
 import { LocationComponent } from './location/location.component';
 import { DepartmentComponent } from './department/department.component';
+import { RecommendedActionsDialog } from './recommended-actions-dialog/recommended-actions-dialog.component';
 import { ItemsComponent } from './items/items.component';
 import { DiscrepancyLocationDetail } from './discrepancy-by-location-detail/discrepancy-location-detail.component';
 import { ChartsModule } from 'ng2-charts';
@@ -37,6 +38,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     DoughnutChartComponent,
     BarChartComponent,
     PieChartComponent,
+    RecommendedActionsDialog,
   ],
   imports: [
     BrowserModule,
