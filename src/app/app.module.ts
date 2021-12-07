@@ -17,6 +17,7 @@ import { ReconciliationInMemDataService, } from './services/reconciliation-in-me
 import { LocationComponent } from './location/location.component';
 import { DepartmentComponent } from './department/department.component';
 import { ItemsComponent } from './items/items.component';
+import { DiscrepancyLocationDetail } from './discrepancy-by-location-detail/discrepancy-location-detail.component';
 import { ChartsModule } from 'ng2-charts';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { DoughnutChartComponent } from './doughnut-chart/doughnut-chart.component';
@@ -31,6 +32,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     LocationComponent,
     DepartmentComponent,
     ItemsComponent,
+    DiscrepancyLocationDetail,
     LineChartComponent,
     DoughnutChartComponent,
     BarChartComponent,
@@ -48,8 +50,8 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeReconciliationfComponent },
-    ]),
-  ],
+    ]), BrowserAnimationsModule
+  ], 
   providers: [],
   bootstrap: [AppComponent]
 })

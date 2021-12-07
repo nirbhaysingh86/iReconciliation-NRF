@@ -1,7 +1,7 @@
 // line-chart.component.ts
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
-import { Color, Label } from 'ng2-charts';
+import { BaseChartDirective, Color, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-line-chart',
@@ -10,6 +10,7 @@ import { Color, Label } from 'ng2-charts';
 })
 export class LineChartComponent {
 
+  @ViewChild(BaseChartDirective) chart: any | undefined;
   @Output() getWeekData = new EventEmitter<any>();
   // Array of different segments in chart
   lineChartData: ChartDataSets[] = [
@@ -61,7 +62,7 @@ export class LineChartComponent {
 
         }, ticks: {
           fontStyle: 'bold',
-
+          
         }
       },]
     },
@@ -89,6 +90,8 @@ export class LineChartComponent {
       },
     },
   };
+    abcd: never[] | undefined;
+    addPointConlor: string | undefined;
   customRadius(context: any) {
     let index = context.dataIndex;
     let value = context.dataset.data[index];
@@ -100,15 +103,15 @@ export class LineChartComponent {
     {
       backgroundColor: '#E1CCF0',
       borderColor: '#E1CCF0',
-
+      pointBackgroundColor: []
     },
     {
       backgroundColor: '#FFFFFF',
       borderColor: '#ED7D31',
-
+      pointBackgroundColor: []
     },
     {
-      borderDash: [10, 5], borderColor: '#4472C4', backgroundColor: '#FFFFFF'
+      borderDash: [10, 5], borderColor: '#4472C4', backgroundColor: '#FFFFFF', pointBackgroundColor: []
     }
   ];
 
@@ -122,10 +125,34 @@ export class LineChartComponent {
 
   chartClicked(evt: any) {
     if (evt.active.length > 0) {
+
+      this.chart?.chart;
+      
+      var firstPoint = evt.active[0];
+
+      var label = this.chart.labels[firstPoint._index];
+      
+      let existingPoints = this.chart.labels;
+
+      var elementIndex = evt.active[0]._index;
+
+      this.abcd = [];
+      this.chart.datasets[0].pointBackgroundColor = [];
+      existingPoints.forEach((element: any,index:any) => {
+        console.log(this.abcd);
+        if (element === label) {
+          this.chart.datasets[0].pointBackgroundColor.push("green");
+           //this.chart.datasets[0].pointBackgroundColor[elementIndex] = "green";
+        } else {
+          this.chart.datasets[0].pointBackgroundColor.push("white");
+          //this.chart.datasets[0].pointBackgroundColor[index] = "white";
+        }
+      });
+       
       var elementIndex = evt.active[0]._index;
       let week = this.lineChartLabels[elementIndex];
       this.getWeekData.emit(week);
-      //activeElements[0].datasets[0].pointBackgroundColor[elementIndex] = 'white';
+      this.chart?.chart.update();
     }
     console.log('Clicked!');
   }

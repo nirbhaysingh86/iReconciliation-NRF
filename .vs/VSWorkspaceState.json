@@ -3,14 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\doughnut-chart",
-    "\\src\\app\\home-reconciliation",
+    "\\src\\app\\bar-chart",
     "\\src\\app\\items",
     "\\src\\app\\line-chart",
+    "\\src\\app\\models",
     "\\src\\app\\nav-menu",
     "\\src\\app\\pie-chart",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

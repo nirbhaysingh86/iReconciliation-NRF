@@ -1,0 +1,65 @@
+<div class="card card-text-size">
+
+  <div class="card-body">
+    <div class="chartjs-container">
+      <span>
+        {{this.discrepancylocDetail.locname}}
+      </span>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort (matSortChange)="onMatSortChange()" matSortDirection="asc">
+
+          <!-- sourceSystem Column -->
+          <ng-container matColumnDef="sourceSystem">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Source System </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.sourceSystem}} </mat-cell>
+          </ng-container>
+
+          <!-- targetSystem Column -->
+          <ng-container matColumnDef="targetSystem">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Target System </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.targetSystem}}</mat-cell>
+          </ng-container>
+
+          <!-- store Column -->
+          <ng-container matColumnDef="store">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Store </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.store}} </mat-cell>
+          </ng-container>
+
+          <!-- store Column -->
+          <ng-container matColumnDef="Item">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Item </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.Item}} </mat-cell>
+          </ng-container>
+          <!-- store Column -->
+          <ng-container matColumnDef="sourceCount">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Source Count </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.sourceCount}} </mat-cell>
+          </ng-container>
+          <!-- store Column -->
+          <ng-container matColumnDef="targetCount">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Target Count </mat-header-cell>
+            <mat-cell *matCellDef="let row"> {{row.targetCount}} </mat-cell>
+          </ng-container>
+          <!-- Action Column -->
+          <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+            <mat-cell *matCellDef="let row">  <button mat-raised-button color="primary" (click)="showPopUp(row)">Action Button</button> </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+
+
+        </table>
+        <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[10]" (page)="pageEvent = $event"
+                       aria-label="Select page">
+        </mat-paginator>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

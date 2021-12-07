@@ -16,7 +16,7 @@ export class HomeReconciliationfComponent {
   depdiscrepancy: any;
   depcolors: any;
   selectedWeek: any;
-
+  discrepancylocDetail = '';
   constructor(private reconciliation: HttpClientReconciliationService) {
 
   }
@@ -80,4 +80,7 @@ export class HomeReconciliationfComponent {
     this.selectedWeek = week;
   }
 
+  getDiscrepancyLocDetail(discrepancylocDetail: any) {
+    this.discrepancylocDetail = discrepancylocDetail;
+  }
 }

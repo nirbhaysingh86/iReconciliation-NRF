@@ -46,6 +46,12 @@
     <app-line-chart (getWeekData)="getWeekData($event)"></app-line-chart>
   </div>
   <div class="col-sm-6">
-    <app-bar-chart [locationdata]="locationdata" [selectedWeek]="selectedWeek" *ngIf="locationdata"></app-bar-chart>
+    <app-bar-chart [locationdata]="locationdata" [selectedWeek]="selectedWeek" *ngIf="locationdata" (getDiscrepancyLocDetail)="getDiscrepancyLocDetail($event)"></app-bar-chart>
   </div>
 </div>
+<div >
+  <div *ngIf="discrepancylocDetail" class="col-sm-12">
+    <app-discrepancy-location-detail [discrepancylocDetail]="discrepancylocDetail"></app-discrepancy-location-detail>
+  </div>
+</div>
+

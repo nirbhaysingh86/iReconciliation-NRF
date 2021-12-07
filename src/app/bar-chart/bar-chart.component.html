@@ -14,9 +14,11 @@
                 [colors]="barChartColors"
                 [plugins]="barChartPlugins"
                 [legend]="barChartLegend"
+                (chartClick)="barChartClicked($event)"
                 [chartType]="barChartType">
         </canvas>
       </div>
     </div>
   </div>
 </div>
+
