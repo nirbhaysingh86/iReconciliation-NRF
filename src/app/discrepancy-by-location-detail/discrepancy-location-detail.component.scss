@@ -30,3 +30,11 @@ table {
   line-height: 14px;
   min-width: auto;
 }
+.mat-header-cell {
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  font-weight: bold !important;
+  font-size: 12pt !important;
+}
+ 
