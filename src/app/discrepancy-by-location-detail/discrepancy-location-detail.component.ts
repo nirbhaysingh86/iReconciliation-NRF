@@ -30,11 +30,11 @@ export class DiscrepancyLocationDetail {
 
   }
 
-  //bar chart will display based on week selection
+  //table  will display based on location selection
   ngOnChanges(changes: any) {
     console.log(changes);
     if (changes && changes.discrepancylocDetail) {
-      this.reconciliation.getDiscrepancyLocationDetails().subscribe((data: any) => {
+      this.reconciliation.getDiscrepancyLocationDetails(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
         console.log(data);
         this.discrepancyLocationList = data;
         this.collectionSize = data.length;
@@ -53,6 +53,7 @@ export class DiscrepancyLocationDetail {
     //row;
     this.dialog.open(RecommendedActionsDialog);
   }
+
   ngAfterViewInit() {
 
     this.dataSource.sort = this.sort;

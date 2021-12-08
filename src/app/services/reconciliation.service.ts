@@ -16,5 +16,5 @@ export abstract class ReconciliationService {
   abstract getLocations(): Observable<Location[]>;
   abstract getDepartments(): Observable<Department[]>;
   abstract getItems(): Observable<Items[]>;
-  abstract getDiscrepancyLocationDetails(): Observable<DiscrepancyLocationDetails[]>;
+  abstract getDiscrepancyLocationDetails(locId: any): Observable<DiscrepancyLocationDetails[]>;
 }

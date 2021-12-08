@@ -38,10 +38,16 @@ export class HttpClientReconciliationService extends ReconciliationService {
     );
   }
 
-  getDiscrepancyLocationDetails(): Observable<DiscrepancyLocationDetails[]> {
-    return this.http.get<DiscrepancyLocationDetails[]>(this.discrepancyLocationtUrl).pipe(
+  getDiscrepancyLocationDetails(locid :any): Observable<DiscrepancyLocationDetails[]> {
+    
+    // add safe, encoded search parameter if term is present
+    const options =
+      { params: new HttpParams().set('locid', locid) } ;
+
+    return this.http.get<DiscrepancyLocationDetails[]>(this.discrepancyLocationtUrl, options).pipe(
       catchError(this.handleError)
     );
+     
   }
 
   private handleError(error: any) {

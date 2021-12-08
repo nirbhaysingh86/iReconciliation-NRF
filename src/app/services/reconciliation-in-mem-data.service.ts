@@ -70,7 +70,7 @@ export class ReconciliationInMemDataService implements InMemoryDbService {
       { locid: 3, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 942, Item: '005051994', sourceCount: 14, targetCount: 14 },
       { locid: 3, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 948, Item: '360150080', sourceCount: 0, targetCount: 15 },
 
-      { locid: 7, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 949, Item: '005141416', sourceCount: 12, targetCount: 15 },
+      { locid: 7, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 949, Item: 'AA5141416', sourceCount: 12, targetCount: 15 },
       { locid: 7, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 946, Item: '857450003', sourceCount: 9, targetCount: 12 },
       { locid: 7, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 947, Item: '387960052', sourceCount: 8, targetCount: 10 },
       { locid: 7, sourceSystem: 'Merchandising', targetSystem: 'Store', store: 931, Item: '005010194', sourceCount: 5, targetCount: 3 },
