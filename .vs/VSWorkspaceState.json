@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\discrepancy-by-location-detail",
-    "\\src\\app\\home-reconciliation",
+    "\\src\\app\\doughnut-chart",
     "\\src\\app\\line-chart",
+    "\\src\\app\\location",
     "\\src\\app\\models",
     "\\src\\app\\pie-chart",
     "\\src\\app\\recommended-actions-dialog",
     "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\models\\discrepancylocationdetails.ts",
+  "SelectedNode": "\\src\\app\\discrepancy-by-location-detail\\discrepancy-location-detail.component.scss",
   "PreviewInSolutionExplorer": false
 }
