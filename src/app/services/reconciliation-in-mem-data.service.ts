@@ -27,11 +27,11 @@ export class ReconciliationInMemDataService implements InMemoryDbService {
       { locid: 14, locationName: 'Minnesota', locationCode: 'MN', locationType: 'International', discrepancy: 380, W01: 444, W02: 390, W03: 121, W04: 122, W05: 122, W06: 211, W07: 211, W08: 34, W09: 16, W10: 11, W11: 212, W12: 221, W13: 321, W14: 212, W15: 432, W16: 122 },
     ];
     let departments: Department[] = [
-      { dptid: 1, departmentName: 'menswer', departmentCode: 'BL', discrepancy: 1599, departmentType: 'International', W01: 1599, W02: 136, W03: 777, W04: 1448, W05: 405, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
-      { dptid: 2, departmentName: 'shoes', departmentCode: 'BU', discrepancy: 136, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
-      { dptid: 3, departmentName: 'handbags', departmentCode: 'EP', discrepancy: 777, departmentType: 'Domestic', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
-      { dptid: 4, departmentName: 'beauty', departmentCode: 'EA', discrepancy: 1448, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
-      { dptid: 5, departmentName: 'accessories', departmentCode: 'RO', discrepancy: 405, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
+      { dptid: 1, departmentName: 'Menswear', departmentCode: 'BL', discrepancy: 1599, departmentType: 'International', W01: 1599, W02: 136, W03: 777, W04: 1448, W05: 405, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
+      { dptid: 2, departmentName: 'Shoes', departmentCode: 'BU', discrepancy: 136, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
+      { dptid: 3, departmentName: 'Handbags', departmentCode: 'EP', discrepancy: 777, departmentType: 'Domestic', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
+      { dptid: 4, departmentName: 'Beauty', departmentCode: 'EA', discrepancy: 1448, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
+      { dptid: 5, departmentName: 'Accessories', departmentCode: 'RO', discrepancy: 405, departmentType: 'International', W01: 461, W02: 326, W03: 249, W04: 396, W05: 316, W06: 306, W07: 336, W08: 316, W09: 336, W10: 386, W11: 316, W12: 306, W13: 266, W14: 166, W15: 66, W16: 112 },
 
     ];
     let items: Items[] = [

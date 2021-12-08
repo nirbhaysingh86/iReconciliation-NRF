@@ -51,12 +51,12 @@ export class DoughnutChartComponent implements OnInit {
               ctx = chart.chart.ctx;
             ctx.restore();
             var fontSize = (height / 10).toFixed(2);
-            ctx.font = fontSize + "px Arial";
+            ctx.font =   "14px Arial";
             ctx.textBaseline = "middle";
             var text = sum,
               textX = Math.round((width - ctx.measureText(text).width) / 2),
               textY = height / 2;
-            ctx.fillText("20%", textX, textY);
+            ctx.fillText("20%", textX+2, textY);
             ctx.save();
           }
         }

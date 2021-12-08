@@ -47,7 +47,7 @@ export class DiscrepancyLocationDetail {
 
   showPopUp(row: any) {
     //row;
-    this.dialog.open(RecommendedActionsDialog);
+    this.dialog.open(RecommendedActionsDialog, { panelClass: 'my-dialog',});
   }
 
   ngAfterViewInit() {
