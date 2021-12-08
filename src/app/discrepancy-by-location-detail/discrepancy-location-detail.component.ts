@@ -16,10 +16,7 @@ export class DiscrepancyLocationDetail {
   searchTerm: any;
   pageEvent: any;
   pageSize = 10;
-  pageSizeOptions: number[] = [10, 25, 50];
-  collectionSize: any;
   discrepancyLocationList: any[] = [];
-  allAirlines: any[] = [];
   displayedColumns: string[] = ['sourceSystem', 'targetSystem', 'store', 'Item', 'sourceCount', 'targetCount','action'];
   @Input() discrepancylocDetail: any;
   @ViewChild(MatPaginator) paginator: any;
@@ -37,8 +34,7 @@ export class DiscrepancyLocationDetail {
       this.reconciliation.getDiscrepancyLocationDetails(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
         console.log(data);
         this.discrepancyLocationList = data;
-        this.collectionSize = data.length;
-        this.allAirlines = data;
+        
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
       })
