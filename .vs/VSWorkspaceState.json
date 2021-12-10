@@ -3,13 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\doughnut-chart",
-    "\\src\\app\\line-chart",
+    "\\src\\app\\discrepancy-by-location-detail",
     "\\src\\app\\location",
     "\\src\\app\\models",
     "\\src\\app\\pie-chart",
     "\\src\\app\\recommended-actions-dialog",
-    "\\src\\app\\services"
+    "\\src\\app\\services",
+    "\\src\\assets"
   ],
   "SelectedNode": "\\src\\app\\discrepancy-by-location-detail\\discrepancy-location-detail.component.scss",
   "PreviewInSolutionExplorer": false

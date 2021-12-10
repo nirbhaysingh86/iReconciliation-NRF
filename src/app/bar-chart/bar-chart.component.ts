@@ -31,10 +31,11 @@ export class BarChartComponent implements OnInit {
           display: false,
           zeroLineColor: 'white',
           color: 'transparent',
-
+          
         }
       }]
     },
+    onHover: this.graphHover,
   };
   barChartLabels: Label[] = [];
   barChartType: ChartType = 'bar';
@@ -66,6 +67,13 @@ export class BarChartComponent implements OnInit {
     }
   }
 
+  graphHover(e: any, array: any) {
+  if (array.length > 0) {
+    e.target.style.cursor = 'pointer';
+  } else {
+    e.target.style.cursor = '';
+  }
+}
   barChartClicked(evt: any) {
     if (evt.active.length > 0) {
       this.chart?.chart;
