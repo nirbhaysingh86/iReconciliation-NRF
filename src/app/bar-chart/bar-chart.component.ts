@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { BaseChartDirective, Color, Label } from 'ng2-charts';
 
@@ -43,7 +44,7 @@ export class BarChartComponent implements OnInit {
   barChartPlugins = [];
   locationData: any;
   barChartData: any[] = [{ data: [] }];
-
+  
   ngOnInit() {
     this.setChartData();
   }
@@ -73,13 +74,15 @@ export class BarChartComponent implements OnInit {
   } else {
     e.target.style.cursor = '';
   }
-}
+  }
+
   barChartClicked(evt: any) {
+   
     if (evt.active.length > 0) {
       this.chart?.chart;
       var firstPoint = evt.active[0];
       //let existingPoints = this.chart.labels;
-      let data = { 'locId': evt.active[0]._index, 'locname': this.chart.labels[firstPoint._index]};
+      let data = { 'locId': this.locationdata[evt.active[0]._index].locid, 'locname': this.chart.labels[firstPoint._index]};
       this.getDiscrepancyLocDetail.emit(data);
 
     }
@@ -92,4 +95,6 @@ export class BarChartComponent implements OnInit {
 
     }
   ];
+
+  
 }

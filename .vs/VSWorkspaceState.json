@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\discrepancy-by-location-detail",
+    "\\src\\app\\department",
+    "\\src\\app\\home-reconciliation",
+    "\\src\\app\\items",
+    "\\src\\app\\line-chart",
     "\\src\\app\\location",
-    "\\src\\app\\models",
-    "\\src\\app\\pie-chart",
-    "\\src\\app\\recommended-actions-dialog",
-    "\\src\\app\\services",
+    "\\src\\app\\nav-menu",
     "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\discrepancy-by-location-detail\\discrepancy-location-detail.component.scss",
+  "SelectedNode": "\\src\\app\\line-chart\\line-chart.component.scss",
   "PreviewInSolutionExplorer": false
 }

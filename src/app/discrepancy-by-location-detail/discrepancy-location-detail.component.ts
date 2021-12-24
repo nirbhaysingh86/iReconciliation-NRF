@@ -17,7 +17,7 @@ export class DiscrepancyLocationDetail {
   pageEvent: any;
   pageSize = 10;
   discrepancyLocationList: any[] = [];
-  displayedColumns: string[] = ['sourceSystem', 'targetSystem', 'store', 'Item', 'sourceCount', 'targetCount','action'];
+  displayedColumns: string[] = ['sourceSystem', 'targetSystem', 'store', 'Item', 'sourceCount', 'targetCount', 'action'];
   @Input() discrepancylocDetail: any;
   @ViewChild(MatPaginator) paginator: any;
   dataSource: MatTableDataSource<DiscrepancyLocationDetails> = new MatTableDataSource();
@@ -32,9 +32,12 @@ export class DiscrepancyLocationDetail {
     console.log(changes);
     if (changes && changes.discrepancylocDetail) {
       this.reconciliation.getDiscrepancyLocationDetails(changes.discrepancylocDetail.currentValue.locId).subscribe((data: any) => {
+        data = data.filter((el: any) => {
+          return el.locid == this.discrepancylocDetail.locId;
+        })
         console.log(data);
         this.discrepancyLocationList = data;
-        
+
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
       })
@@ -42,19 +45,19 @@ export class DiscrepancyLocationDetail {
   }
 
   ngOnInit() {
-    
+
   }
 
   showPopUp(row: any) {
     //row;
-    this.dialog.open(RecommendedActionsDialog, { panelClass: 'my-dialog',});
+    this.dialog.open(RecommendedActionsDialog, { panelClass: 'my-dialog', });
   }
 
   ngAfterViewInit() {
 
     this.dataSource.sort = this.sort;
   }
-   
+
   onMatSortChange() {
     this.dataSource.sort = this.sort;
   }

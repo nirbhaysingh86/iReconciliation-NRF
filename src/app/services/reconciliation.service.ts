@@ -9,10 +9,10 @@ import { Items } from '../models/items';
 })
 
 export abstract class ReconciliationService {
-  locationUrl = 'api/locations';
-  departmentUrl = 'api/departments';
-  itemtUrl = 'api/items';
-  discrepancyLocationtUrl = 'api/discrepancyLocationDetails';
+  locationUrl = 'assets/locations.json';
+  departmentUrl = 'assets/departments.json';
+  itemtUrl = 'assets/items.json';//'api/items';
+  discrepancyLocationtUrl = 'assets/discrepancyLocationDetails.json';
   abstract getLocations(): Observable<Location[]>;
   abstract getDepartments(): Observable<Department[]>;
   abstract getItems(): Observable<Items[]>;

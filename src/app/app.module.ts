@@ -48,7 +48,7 @@ import { PieChartComponent } from './pie-chart/pie-chart.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientInMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
+   //InMemoryWebApiModule.forRoot(ReconciliationInMemDataService),
     RouterModule.forRoot([
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'home', component: HomeReconciliationfComponent },
